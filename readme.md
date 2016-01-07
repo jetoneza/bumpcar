@@ -1,6 +1,6 @@
 ## BUMPCAR
 
-This is for my thesis. I'm trying to detect a car accident using computer vision. I will be using the SimpleCV python library. I'm new to this so please comment for any suggestions. 
+I'm trying to detect a car accident using computer vision. I will be using the SimpleCV python library. I'm new to this so please comment for any suggestions. 
 
 ## Official Documentation
 
