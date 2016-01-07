@@ -4,6 +4,12 @@
 
 from SimpleCV import *
 
-cam = Camera()
+FILES_DIR = '../files/'
 
-cam.live()
+video = VirtualCamera(FILES_DIR + 'video_1.mp4', 'video')
+
+display = Display()
+
+while display.isNotDone():
+	img = video.getImage()
+	img.save(display)
