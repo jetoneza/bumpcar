@@ -1,0 +1,9 @@
+
+.DS_Store
+*.mwb.bak
+javascript/bumpcar/node_modules
+
+!TOUCH
+npm-debug.log
+*.rdb
+.idea
