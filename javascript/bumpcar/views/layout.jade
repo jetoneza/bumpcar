@@ -2,7 +2,11 @@ doctype html
 html
     head
         title= title
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet', href='/libs/semantic/dist/semantic.min.css')
     body
         block content
+        script(src='/libs/jquery/jquery.js')
+        script(src='/libs/semantic/dist/semantic.min.js')
+        script(src='/libs/tracking/build/tracking-min.js')
         script(src='/js/app.js')
-        script(src='/assets-src/js/libs/tracking/build/tracking-min.js')
