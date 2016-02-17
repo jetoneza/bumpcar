@@ -2,6 +2,8 @@
 .DS_Store
 *.mwb.bak
 javascript/bumpcar/node_modules
+javascript/bumpcar/bumpcar/build
+javascrupt/bumpcar/public/assets
 
 !TOUCH
 npm-debug.log

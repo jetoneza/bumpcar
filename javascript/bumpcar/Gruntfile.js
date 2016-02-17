@@ -2,6 +2,13 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    // delete the dist folder
+    clean: {
+      es6: {
+        src: './operations/dist'
+      }
+    },
+
     // Compile less files
     less: {
       dist: {
@@ -11,20 +18,46 @@ module.exports = function (grunt) {
       }
     },
 
+    babel: {
+      dev: {
+        options: {
+          sourceMap: true
+        },
+        files: [
+          {
+            expand: true,
+            cwd: './bumpcar/src',
+            src: ['**/*.js'],
+            dest: './bumpcar/build',
+            ext: '.js'
+          }
+        ]
+      },
+    },
+
     // Watch files and recompile if there any changes
     esteWatch: {
       options: {
         dirs: [
           '<%= pkg.src %>/css/**/',
+          './bumpcar/src'
         ]
       },
       less: function () {
         return ['less'];
       },
+
+      js: function () {
+        return ['babel:dev'];
+      },
+
+      es6: function () {
+        return ['babel:dev'];
+      }
     },
 
     concurrent: {
-      'compilers-dev': ['less'],
+      'compilers-dev': ['newer:babel:dev', 'less'],
       'watchers': {
         tasks: ['esteWatch'],
         options: {
@@ -35,9 +68,12 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-este-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('core-dev', ['concurrent:compilers-dev', 'concurrent:watchers']);
+  grunt.registerTask('core-dev', ['clean', 'concurrent:compilers-dev', 'concurrent:watchers']);
   grunt.registerTask('dev', ['core-dev']);
 };

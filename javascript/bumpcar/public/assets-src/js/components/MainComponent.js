@@ -3,6 +3,7 @@
 import React from 'react';
 
 import Header from './partials/Header';
+import Bumpcar from '../../../../bumpcar/build/bumpcar';
 
 /**
  * Main Component
@@ -16,6 +17,10 @@ class MainComponent extends React.Component {
   }
 
   _handleButtonClick() {
+
+    var bumpcarApp = new Bumpcar();
+    bumpcarApp.print();
+
     window.alert('Coming soon!');
   }
 
