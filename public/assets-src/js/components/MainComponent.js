@@ -3,7 +3,7 @@
 import React from 'react';
 
 import Header from './partials/Header';
-import Bumpcar from '../../../../bumpcar/build/bumpcar';
+import Video from './partials/Video';
 
 /**
  * Main Component
@@ -11,17 +11,38 @@ import Bumpcar from '../../../../bumpcar/build/bumpcar';
  */
 class MainComponent extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showVideo: false
+    }
+  }
+
   componentDidMount() {
     var {button} = this.refs;
     $(button).transition('tada');
   }
 
   _handleButtonClick() {
+    this.setState({showVideo: true});
+  }
 
-    var bumpcarApp = new Bumpcar();
-    bumpcarApp.print();
-
-    window.alert('Coming soon!');
+  _getHeroContent() {
+    return (
+        <div className="ui text container hero">
+          <h1 className="ui huge header">
+            Bumpcar
+          </h1>
+          <h2>Watch very intense crashes. Not for the faint hearted. Parental guidanace is
+            adviced.</h2>
+          <div className="ui huge red button" ref="button"
+               onClick={this._handleButtonClick.bind(this)}>
+            +18 ENTER <i
+              className="right arrow icon"></i>
+          </div>
+        </div>
+    );
   }
 
   /**
@@ -30,27 +51,16 @@ class MainComponent extends React.Component {
    */
   render() {
 
-    var style = {
-      height: '100vh',
-      'marginTop': '100px',
-    }
+    var content = this.state.showVideo ? <Video /> : this._getHeroContent();
 
     return (
         <div className="main-component">
           <div className="ui inverted vertical masthead center aligned segment">
             <Header />
           </div>
-          <div className="ui text container" style={style}>
-            <h1 className="ui huge header">
-              Bumpcar
-            </h1>
-            <h2>Watch very intense crashes. Not for the faint hearted. Parental guidanace is
-              adviced.</h2>
-            <div className="ui huge red button" ref="button" onClick={this._handleButtonClick}>
-              +18 ENTER <i
-                className="right arrow icon"></i>
-            </div>
-          </div>
+
+          {content}
+
         </div>
     );
   }
