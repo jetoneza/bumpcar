@@ -27,7 +27,6 @@
     "react-addons-transition-group": "0.14.7",
     "react-dom": "0.14.7",
     "react-router": "^1.0.3",
-    "semantic-ui": "^2.1.8",
     "serve-favicon": "~2.3.0",
     "webpack": "^1.12.13",
     "grunt": "0.4.5",

@@ -75,5 +75,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('core-dev', ['clean', 'concurrent:compilers-dev', 'concurrent:watchers']);
+  grunt.registerTask('core-dev-build', ['clean', 'concurrent:compilers-dev']);
   grunt.registerTask('dev', ['core-dev']);
+  grunt.registerTask('build', ['core-dev-build']);
 };

@@ -6,7 +6,7 @@ endef
 
 setup-web:
 	sudo npm install --loglevel error
-	cd ./public/libs/semantic; gulp build
+	sudo grunt build
 
 setup: update-git
 	make setup-web
