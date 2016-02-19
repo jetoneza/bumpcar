@@ -4,6 +4,7 @@ import React from 'react';
 
 import Bumpcar from '../../../../../bumpcar/build/bumpcar';
 import Files from '../../../../../constants/Files';
+import Trackers from '../../../../../constants/Trackers';
 
 /**
  * Main Component
@@ -12,8 +13,20 @@ import Files from '../../../../../constants/Files';
 class Video extends React.Component {
 
   componentDidMount() {
-    Bumpcar.init();
-    Bumpcar.stopTracker();
+    var trackers = [
+      {
+        element: '#video',
+        trackerName: Trackers.CAR_TRACKER
+      },
+      {
+        element: '#video',
+        trackerName: Trackers.COLOR_TRACKER
+      }
+    ];
+
+    Bumpcar.setTrackers(trackers);
+    Bumpcar.run();
+    Bumpcar.stop();
   }
 
   /**

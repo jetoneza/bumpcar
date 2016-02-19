@@ -4,7 +4,7 @@
  */
 var TrackingJS = window.tracking;
 
-class CarTracker extends TrackingJS.Tracker {
+class carTracker extends TrackingJS.Tracker {
   constructor() {
     super();
   }
@@ -14,9 +14,15 @@ class CarTracker extends TrackingJS.Tracker {
   }
 }
 
-TrackingJS.CarTracker = CarTracker;
+TrackingJS.CarTracker = carTracker;
 
-module.exports = new TrackingJS.CarTracker();
+class CarTracker {
+  init() {
+    return new TrackingJS.CarTracker();
+  }
+}
+
+module.exports = new CarTracker();
 
 
 
