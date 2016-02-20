@@ -3,6 +3,7 @@
 *.mwb.bak
 node_modules
 bumpcar/build
+fish/build
 public/assets
 
 !TOUCH

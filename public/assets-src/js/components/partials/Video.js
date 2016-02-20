@@ -2,9 +2,8 @@
 
 import React from 'react';
 
-import Bumpcar from '../../../../../bumpcar/build/bumpcar';
 import Files from '../../../../../constants/Files';
-import Trackers from '../../../../../constants/Trackers';
+import BumpcarHandler from '../../../../../fish/build/barracuda/handlers/BumpcarHandler';
 
 /**
  * Main Component
@@ -13,20 +12,8 @@ import Trackers from '../../../../../constants/Trackers';
 class Video extends React.Component {
 
   componentDidMount() {
-    var trackers = [
-      {
-        element: '#video',
-        trackerName: Trackers.CAR_TRACKER
-      },
-      {
-        element: '#video',
-        trackerName: Trackers.COLOR_TRACKER
-      }
-    ];
-
-    Bumpcar.setTrackers(trackers);
-    Bumpcar.run();
-    Bumpcar.stop();
+    var handler = new BumpcarHandler();
+    handler.run();
   }
 
   /**

@@ -5,7 +5,10 @@ module.exports = function (grunt) {
     // delete the dist folder
     clean: {
       es6: {
-        src: './operations/dist'
+        src: './bumpcar/build'
+      },
+      js: {
+        src: './fish/build'
       }
     },
 
@@ -30,6 +33,13 @@ module.exports = function (grunt) {
             src: ['**/*.js'],
             dest: './bumpcar/build',
             ext: '.js'
+          },
+          {
+            expand: true,
+            cwd: './fish/src',
+            src: ['**/*.js'],
+            dest: './fish/build',
+            ext: '.js'
           }
         ]
       },
@@ -40,7 +50,8 @@ module.exports = function (grunt) {
       options: {
         dirs: [
           '<%= pkg.src %>/css/**/',
-          './bumpcar/src'
+          './bumpcar/src',
+          './fish/src'
         ]
       },
       less: function () {
@@ -53,7 +64,7 @@ module.exports = function (grunt) {
 
       es6: function () {
         return ['babel:dev'];
-      }
+      },
     },
 
     concurrent: {
