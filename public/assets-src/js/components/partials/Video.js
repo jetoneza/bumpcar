@@ -4,6 +4,8 @@ import React from 'react';
 
 import Files from '../../../../../constants/Files';
 import BumpcarHandler from '../../../../../fish/build/barracuda/handlers/BumpcarHandler';
+import VideoActions from '../../actions/VideoActions';
+import Stores from '../../stores';
 
 /**
  * Main Component
@@ -12,8 +14,20 @@ import BumpcarHandler from '../../../../../fish/build/barracuda/handlers/Bumpcar
 class Video extends React.Component {
 
   componentDidMount() {
+    VideoActions.getVideoData('video1');
+    Stores.VideosDataStore.addChangeListener(this._onChange.bind(this));
+
     var handler = new BumpcarHandler();
     handler.run();
+  }
+
+  compoenentWillUnmount() {
+    Stores.VideosDataStore.removeChangeListener(this._onChange);
+  }
+
+  _onChange() {
+    var data = Stores.VideosDataStore.getData();
+    console.log('data:', data);
   }
 
   /**

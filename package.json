@@ -9,6 +9,7 @@
     "debug": "DEBUG=webroot:* node ./bin/www"
   },
   "dependencies": {
+    "flux": "^2.0.3",
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.2",
     "babel-plugin-react-transform": "^2.0.0",
@@ -38,9 +39,11 @@
     "grunt-babel": "^6.0.0",
     "grunt-contrib-clean": "0.6.0",
     "gulp-autoprefixer": "2.3.1",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "object-assign": "^1.0.0"
   },
   "devDependencies": {
-    "webpack-dev-middleware": "^1.5.1"
+    "webpack-dev-middleware": "^1.5.1",
+    "events": "^1.0.0"
   }
 }
