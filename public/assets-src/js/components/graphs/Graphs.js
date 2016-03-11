@@ -3,10 +3,10 @@
 import React from 'react';
 
 /**
- * Header Component
+ * Graph Component
  * @author jet.oneza <jet.oneza@gmail.com>
  */
-class Header extends React.Component {
+class Graphs extends React.Component {
 
   /**
    * Returns the component markup
@@ -14,8 +14,8 @@ class Header extends React.Component {
    */
   render() {
     return (
-        <div className="ui inverted vertical left aligned segment main-header">
-          <h1 className="company ui header">Bumpcar</h1>
+        <div className="graphs-component">
+          <h1>Graphs</h1>
         </div>
     );
   }
@@ -25,12 +25,12 @@ class Header extends React.Component {
  * Declare property types here
  * @type {Object}
  */
-Header.propTypes = {};
+Graphs.propTypes = {};
 
 /**
  * Declare default property values here
  * @type {Object}
  */
-Header.defaultProps = {};
+Graphs.defaultProps = {};
 
-export default Header;
+export default Graphs;
