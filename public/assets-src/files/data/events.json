@@ -4,10 +4,10 @@
     "type": "collision",
     "place": {
       "name": "R. Magsaysay Ave cor CM Recto St",
-      "lat": "7.0664237000000",
-      "long": "125.5801817000000"
+      "lat": "7.073615",
+      "long": "125.612537"
     },
-    "date": "2016-12-10",
+    "date": "2016-12-10 02:36 AM",
     "fileUrl": "/assets-src/files/videos/collision.avi"
   },
   {
@@ -15,10 +15,10 @@
     "type": "over_speeding",
     "place": {
       "name": "CM Recto St cor Roxas Ave",
-      "lat": "7.1851100000000",
-      "long": "125.4133303000000"
+      "lat": "7.072162",
+      "long": "125.612108"
     },
-    "date": "2016-10-10",
+    "date": "2016-10-10 04:32 PM",
     "fileUrl": "/assets-src/files/videos/speed_detection.avi"
   },
   {
@@ -26,10 +26,10 @@
     "type": "collision",
     "place": {
       "name": "Sta. Ana Ave cor Guerrero St",
-      "lat": "7.0664237000000",
-      "long": "125.5801817000000"
+      "lat": "7.076770",
+      "long": "125.616007"
     },
-    "date": "2015-03-05",
+    "date": "2015-03-05 01:21 AM",
     "fileUrl": "/assets-src/files/videos/collision.avi"
   },
   {
@@ -37,10 +37,10 @@
     "type": "wrong_lane",
     "place": {
       "name": "CP Garcia cor Matina Pangi",
-      "lat": "7.0291910000000",
-      "long": "125.3982413000000"
+      "lat": "7.058688",
+      "long": "125.568795"
     },
-    "date": "2016-01-10",
+    "date": "2016-01-10 05:55 PM",
     "fileUrl": "/assets-src/files/videos/wrong_lane.avi"
   },
   {
@@ -48,10 +48,10 @@
     "type": "beating_red_light",
     "place": {
       "name": "McArthur - CP Garcia",
-      "lat": "7.0629255000000",
-      "long": "125.6070166000000"
+      "lat": "7.059725",
+      "long": "125.551060"
     },
-    "date": "2016-10-23",
+    "date": "2016-10-23 12:34 AM",
     "fileUrl": "/assets-src/files/videos/beating_red_light.avi"
   }
 ]
