@@ -1,0 +1,52 @@
+[
+  {
+    "code": "1",
+    "type": "collision",
+    "place": {
+      "name": "R. Magsaysay Ave cor CM Recto St",
+      "lat": "7.0664237000000",
+      "long": "125.5801817000000"
+    },
+    "date": "2016-12-10"
+  },
+  {
+    "code": "2",
+    "type": "over_speeding",
+    "place": {
+      "name": "CM Recto St cor Roxas Ave",
+      "lat": "7.1851100000000",
+      "long": "125.4133303000000"
+    },
+    "date": "2016-10-10"
+  },
+  {
+    "code": "5",
+    "type": "collision",
+    "place": {
+      "name": "Sta. Ana Ave cor Guerrero St",
+      "lat": "7.0664237000000",
+      "long": "125.5801817000000"
+    },
+    "date": "2015-03-05"
+  },
+  {
+    "code": "3",
+    "type": "wrong_lane",
+    "place": {
+      "name": "CP Garcia cor Matina Pangi",
+      "lat": "7.0291910000000",
+      "long": "125.3982413000000"
+    },
+    "date": "2016-01-10"
+  },
+  {
+    "code": "4",
+    "type": "beating_red_light",
+    "place": {
+      "name": "McArthur - CP Garcia",
+      "lat": "7.0629255000000",
+      "long": "125.6070166000000"
+    },
+    "date": "2016-10-23"
+  }
+]

@@ -1,3 +1,4 @@
 module.exports = {
-  VideosDataStore: require('./VideosDataStore')
+  VideosDataStore: require('./VideosDataStore'),
+  EventsStore: require('./EventsStore')
 };

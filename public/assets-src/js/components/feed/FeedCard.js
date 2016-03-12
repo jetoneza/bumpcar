@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import EventsConstants from '../../constants/events';
+import _ from 'underscore';
 
 /**
  * Feed Component
@@ -8,17 +10,29 @@ import React from 'react';
  */
 class FeedCard extends React.Component {
 
+  _stringifyKey(key) {
+    return _.find(EventsConstants, (constant, id) => {
+      return id == key;
+    });
+  }
+
   /**
    * Returns the component markup
    * @returns {XML}
    */
   render() {
+
+    var {event} = this.props;
+
+    var type = this._stringifyKey(event.type);
+
     return (
         <div className="ui card feed-card">
           <div className="content">
-            <div className="header">Violation</div>
+            <div className="header">{event.place.name}</div>
             <div className="description">
-              CM Recto St cor Roxas Ave PTZ (2015-03-25)
+              <div className="type">Type: {type}</div>
+              <div className="time">Time: {event.date}</div>
             </div>
           </div>
           <div className="ui bottom attached button view-button">
