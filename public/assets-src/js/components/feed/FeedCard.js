@@ -16,6 +16,26 @@ class FeedCard extends React.Component {
     });
   }
 
+  _getColorByKey(key) {
+    var color = '';
+
+    switch (key) {
+      case 'collision':
+        color = 'red';
+        break;
+      case 'over_speeding':
+        color = 'violet';
+        break;
+      case 'wrong_lane':
+        color = 'teal';
+        break;
+      case 'beating_red_light':
+        color = 'orange'
+    }
+
+    return color;
+  }
+
   /**
    * Returns the component markup
    * @returns {XML}
@@ -26,19 +46,35 @@ class FeedCard extends React.Component {
 
     var type = this._stringifyKey(event.type);
 
+    var color = this._getColorByKey(event.type);
+
     return (
-        <div className="ui card feed-card">
+        <div className="item feed-card">
           <div className="content">
-            <div className="header">{event.place.name}</div>
-            <div className="description">
-              <div className="type">Type: {type}</div>
-              <div className="time">Time: {event.date}</div>
+            <a className="header">{event.place.name}</a>
+            <div className="meta">
+              <span className="cinema">{event.date}</span>
             </div>
-          </div>
-          <div className="ui bottom attached button view-button"
-               onClick={(e) => this.props.handleCardClick(event)}>
-            View
-            <i className="arrow circle right icon"></i>
+            <div className="description">
+              <p>{type} detected!</p>
+            </div>
+            <div className="extra">
+              <div className="ui right floated primary button view-button"
+                   onClick={(e) => this.props.handleCardClick(event)}>
+                View
+                <i className="arrow circle right icon"></i>
+              </div>
+              <div className={`ui label ${color}`}>{type}</div>
+              {event.violations.map((violation) => {
+
+                color = this._getColorByKey(violation)
+                type = this._stringifyKey(violation)
+
+                return (
+                    <div className={`ui label ${color}`}>{type}</div>
+                );
+              })}
+            </div>
           </div>
         </div>
     );

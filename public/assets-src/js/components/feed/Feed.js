@@ -52,7 +52,7 @@ class Feed extends React.Component {
   _getFeed() {
     var {events} = this.state;
     return (
-        <div className="ui one stackable cards event-feed">
+        <div className="ui divided items event-feed">
           {events.map((event) => {
             return (
                 <FeedCard key={event.code} event={event}
