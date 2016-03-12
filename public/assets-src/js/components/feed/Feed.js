@@ -4,6 +4,7 @@ import React from 'react';
 import FeedCard from './FeedCard';
 import EventActions from '../../actions/EventActions';
 import Stores from '../../stores';
+import Event from '../events/Event';
 
 /**
  * Feed Component
@@ -14,7 +15,9 @@ class Feed extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      events: []
+      events: [],
+      activeEvent: null,
+      showEvent: false
     }
   }
 
@@ -32,21 +35,54 @@ class Feed extends React.Component {
     this.setState({events})
   }
 
+  handleCardClick(activeEvent) {
+    this.setState({
+      activeEvent,
+      showEvent: true
+    })
+  }
+
+  handleBackClick() {
+    this.setState({
+      activeEvent: null,
+      showEvent: false
+    });
+  }
+
+  _getFeed() {
+    var {events} = this.state;
+    return (
+        <div className="ui one stackable cards event-feed">
+          {events.map((event) => {
+            return (
+                <FeedCard key={event.code} event={event}
+                          handleCardClick={this.handleCardClick.bind(this)}/>
+            );
+          })}
+        </div>
+    );
+  }
+
+  _getEvent() {
+    var {activeEvent} = this.state;
+    return (
+        <Event event={activeEvent} handleBackClick={this.handleBackClick.bind(this)}/>
+    );
+  }
+
   /**
    * Returns the component markup
    * @returns {XML}
    */
   render() {
-    var {events} = this.state;
+    var feed = this._getFeed();
+    var event = this._getEvent();
+
+    var content = this.state.showEvent ? event : feed;
+
     return (
         <div className="feed-component">
-          <div className="ui one stackable cards">
-            {events.map((event) => {
-              return (
-                  <FeedCard key={event.code} event={event}/>
-              );
-            })}
-          </div>
+          {content}
         </div>
     );
   }

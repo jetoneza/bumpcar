@@ -35,7 +35,8 @@ class FeedCard extends React.Component {
               <div className="time">Time: {event.date}</div>
             </div>
           </div>
-          <div className="ui bottom attached button view-button">
+          <div className="ui bottom attached button view-button"
+               onClick={(e) => this.props.handleCardClick(event)}>
             View
             <i className="arrow circle right icon"></i>
           </div>

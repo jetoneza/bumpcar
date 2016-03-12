@@ -1,13 +1,19 @@
 .feed-component {
-  margin: 0 25%;
-  .feed-card {
-    .view-button {
-      background-color: @db_strip;
-      color: @db_char_select;
-      transition: all 0.3s ease-in-out;
-      &:hover {
-        background-color: @db_main;
+  .event-feed.ui.one.cards {
+    margin: 0 25%;
+    .feed-card {
+      .view-button {
+        background-color: @db_strip;
+        color: @db_char_select;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: @db_main;
+        }
       }
     }
+  }
+
+  .event-component {
+    margin: 0 10%;
   }
 }
