@@ -32,7 +32,10 @@ class Feed extends React.Component {
 
   _onChange() {
     var events = Stores.EventsStore.getData();
-    this.setState({events})
+    this.setState({events});
+    setTimeout(() => {
+      EventActions.getEvents();
+    }, 5000);
   }
 
   handleCardClick(activeEvent) {

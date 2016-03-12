@@ -10,6 +10,14 @@ import _ from 'underscore';
  */
 class FeedCard extends React.Component {
 
+  componentDidMount() {
+    var {item} = this.refs;
+    $(item).transition({
+      animation: 'fly in',
+      duration: '1s',
+    });
+  }
+
   _stringifyKey(key) {
     return _.find(EventsConstants, (constant, id) => {
       return id == key;
@@ -49,7 +57,7 @@ class FeedCard extends React.Component {
     var color = this._getColorByKey(event.type);
 
     return (
-        <div className="item feed-card">
+        <div className="item feed-card" ref="item">
           <div className="content">
             <a className="header"
                onClick={(e) => this.props.handleCardClick(event)}>{event.place.name}</a>
