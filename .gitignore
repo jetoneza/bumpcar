@@ -5,6 +5,7 @@ node_modules
 bumpcar/build
 fish/build
 public/assets
+public/assets-src/files/videos
 
 !TOUCH
 npm-debug.log

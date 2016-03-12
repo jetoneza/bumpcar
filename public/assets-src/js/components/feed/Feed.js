@@ -75,11 +75,7 @@ class Feed extends React.Component {
    * @returns {XML}
    */
   render() {
-    var feed = this._getFeed();
-    var event = this._getEvent();
-
-    var content = this.state.showEvent ? event : feed;
-
+    var content = this.state.showEvent ? this._getEvent() : this._getFeed();
     return (
         <div className="feed-component">
           {content}

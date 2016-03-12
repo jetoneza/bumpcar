@@ -7,7 +7,8 @@
       "lat": "7.0664237000000",
       "long": "125.5801817000000"
     },
-    "date": "2016-12-10"
+    "date": "2016-12-10",
+    "fileUrl": "/assets-src/files/videos/collision.avi"
   },
   {
     "code": "2",
@@ -17,7 +18,8 @@
       "lat": "7.1851100000000",
       "long": "125.4133303000000"
     },
-    "date": "2016-10-10"
+    "date": "2016-10-10",
+    "fileUrl": "/assets-src/files/videos/speed_detection.avi"
   },
   {
     "code": "5",
@@ -27,7 +29,8 @@
       "lat": "7.0664237000000",
       "long": "125.5801817000000"
     },
-    "date": "2015-03-05"
+    "date": "2015-03-05",
+    "fileUrl": "/assets-src/files/videos/collision.avi"
   },
   {
     "code": "3",
@@ -37,7 +40,8 @@
       "lat": "7.0291910000000",
       "long": "125.3982413000000"
     },
-    "date": "2016-01-10"
+    "date": "2016-01-10",
+    "fileUrl": "/assets-src/files/videos/wrong_lane.avi"
   },
   {
     "code": "4",
@@ -47,6 +51,7 @@
       "lat": "7.0629255000000",
       "long": "125.6070166000000"
     },
-    "date": "2016-10-23"
+    "date": "2016-10-23",
+    "fileUrl": "/assets-src/files/videos/beating_red_light.avi"
   }
 ]
