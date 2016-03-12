@@ -51,7 +51,8 @@ class FeedCard extends React.Component {
     return (
         <div className="item feed-card">
           <div className="content">
-            <a className="header">{event.place.name}</a>
+            <a className="header"
+               onClick={(e) => this.props.handleCardClick(event)}>{event.place.name}</a>
             <div className="meta">
               <span className="cinema">{event.date}</span>
             </div>
@@ -71,7 +72,7 @@ class FeedCard extends React.Component {
                 type = this._stringifyKey(violation)
 
                 return (
-                    <div className={`ui label ${color}`}>{type}</div>
+                    <div key={violation} className={`ui label ${color}`}>{type}</div>
                 );
               })}
             </div>

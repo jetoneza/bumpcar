@@ -18,6 +18,26 @@ class Event extends React.Component {
     });
   }
 
+  _getColorByKey(key) {
+    var color = '';
+
+    switch (key) {
+      case 'collision':
+        color = 'red';
+        break;
+      case 'over_speeding':
+        color = 'violet';
+        break;
+      case 'wrong_lane':
+        color = 'teal';
+        break;
+      case 'beating_red_light':
+        color = 'orange'
+    }
+
+    return color;
+  }
+
   /**
    * Returns the component markup
    * @returns {XML}
@@ -25,6 +45,7 @@ class Event extends React.Component {
   render() {
     var {event} = this.props;
     var type = this._stringifyKey(event.type);
+    var color = this._getColorByKey(event.type);
 
     return (
         <div className="event-component">
@@ -36,8 +57,17 @@ class Event extends React.Component {
             <Video fileUrl={event.fileUrl}/>
             <div className="meta">
               <h1 className="place">{event.place.name}</h1>
-              <div className="type">Type: {type}</div>
-              <div className="type">Time: {event.date}</div>
+              <div className="time">{event.date}</div>
+              <div className={`ui label ${color}`}>{type}</div>
+              {event.violations.map((violation) => {
+
+                color = this._getColorByKey(violation)
+                type = this._stringifyKey(violation)
+
+                return (
+                    <div key={violation} className={`ui label ${color}`}>{type}</div>
+                );
+              })}
             </div>
             <Maps place={event.place}/>
           </div>

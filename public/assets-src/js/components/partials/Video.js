@@ -14,7 +14,6 @@ class Video extends React.Component {
    */
   render() {
     var {fileUrl} = this.props;
-    console.log(fileUrl);
     return (
         <div className="ui container video-wrapper">
           <div className="video-container">
