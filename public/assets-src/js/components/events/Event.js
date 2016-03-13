@@ -42,10 +42,6 @@ class Event extends React.Component {
             </div>
             <Maps place={event.place}/>
           </div>
-          <button className="ui button back-button" onClick={this.props.handleBackClick}>
-            <i className="arrow circle left icon"></i>
-            Back
-          </button>
         </div>
     );
   }
