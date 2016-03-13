@@ -40,7 +40,10 @@ var EventsStore = assign({}, EventEmitter.prototype, {
 EventsStore.dispatchToken = Dispatcher.register(function (action) {
   switch (action.type) {
     case 'GET_EVENTS':
-      _data = action.data;
+      var data = action.data;
+      if (!data.error) {
+        _data = data;
+      }
       EventsStore.emitChange();
       break;
   }

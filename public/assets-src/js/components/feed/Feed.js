@@ -54,6 +54,15 @@ class Feed extends React.Component {
 
   _getFeed() {
     var {events} = this.state;
+
+    if (events.length == 0) {
+      return (
+          <div className="ui center aligned container event-feed">
+            <h2>No event.</h2>
+          </div>
+      );
+    }
+
     return (
         <div className="ui divided items event-feed">
           {events.map((event) => {

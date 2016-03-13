@@ -5,7 +5,7 @@ var API = require('../constants/API');
 
 /* GET events listing. */
 router.get('/', function (req, res, next) {
-  request.get({url: API.PATH + 'events'}, function (err, response, body) {
+  request.get({url: API.PATH + 'events?key=' + API.APP_KEY}, function (err, response, body) {
     var data = JSON.parse(body);
     res.send(data);
   });
