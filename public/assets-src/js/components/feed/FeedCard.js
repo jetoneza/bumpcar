@@ -52,10 +52,6 @@ class FeedCard extends React.Component {
 
     var {event} = this.props;
 
-    var type = this._stringifyKey(event.type);
-
-    var color = this._getColorByKey(event.type);
-
     return (
         <div className="item feed-card" ref="item">
           <div className="content">
@@ -65,7 +61,7 @@ class FeedCard extends React.Component {
               <span className="cinema">{event.date}</span>
             </div>
             <div className="description">
-              <p>{type} detected!</p>
+              <p>Detected!</p>
             </div>
             <div className="extra">
               <div className="ui right floated primary button view-button"
@@ -73,14 +69,12 @@ class FeedCard extends React.Component {
                 View
                 <i className="arrow circle right icon"></i>
               </div>
-              <div className={`ui label ${color}`}>{type}</div>
-              {event.violations.map((violation) => {
-
-                color = this._getColorByKey(violation)
-                type = this._stringifyKey(violation)
+              {event.detected.map((violation) => {
+                var color = this._getColorByKey(violation.type)
+                var type = this._stringifyKey(violation.type)
 
                 return (
-                    <div key={violation} className={`ui label ${color}`}>{type}</div>
+                    <div key={violation.type} className={`ui label ${color}`}>{type}</div>
                 );
               })}
             </div>

@@ -1,67 +1,88 @@
 [
   {
     "code": "1",
-    "type": "collision",
     "place": {
       "name": "R. Magsaysay Ave cor CM Recto St",
       "lat": "7.073615",
       "long": "125.612537"
     },
-    "violations": [
-      "beating_red_light"
+    "detected": [
+      {
+        "type": "collision",
+        "fileUrl": ""
+      },
+      {
+        "type": "beating_red_light",
+        "fileUrl": ""
+      }
     ],
     "date": "2016-12-10 02:36 AM",
     "fileUrl": "/assets-src/files/videos/collision.avi"
   },
   {
     "code": "2",
-    "type": "over_speeding",
     "place": {
       "name": "CM Recto St cor Roxas Ave",
       "lat": "7.072162",
       "long": "125.612108"
     },
-    "violations": [
+    "detected": [
+      {
+        "type": "over_speeding",
+        "fileUrl": "/assets-src/files/screenshots/speeding_1.jpg"
+      }
     ],
     "date": "2016-10-10 04:32 PM",
     "fileUrl": "/assets-src/files/videos/speed_detection.mp4"
   },
   {
     "code": "5",
-    "type": "collision",
     "place": {
       "name": "Sta. Ana Ave cor Guerrero St",
       "lat": "7.076770",
       "long": "125.616007"
     },
-    "violations": [
-      "over_speeding"
+    "detected": [
+      {
+        "type": "collision",
+        "fileUrl": ""
+      },
+      {
+        "type": "wrong_lane",
+        "fileUrl": ""
+      }
     ],
     "date": "2015-03-05 01:21 AM",
     "fileUrl": "/assets-src/files/videos/collision.avi"
   },
   {
     "code": "3",
-    "type": "wrong_lane",
     "place": {
       "name": "CP Garcia cor Matina Pangi",
       "lat": "7.058688",
       "long": "125.568795"
     },
-    "violations": [
+    "detected": [
+      {
+        "type": "wrong_lane",
+        "fileUrl": ""
+      }
     ],
     "date": "2016-01-10 05:55 PM",
     "fileUrl": "/assets-src/files/videos/wrong_lane.avi"
   },
   {
     "code": "4",
-    "type": "beating_red_light",
     "place": {
       "name": "McArthur - CP Garcia",
       "lat": "7.059725",
       "long": "125.551060"
     },
-    "violations": [
+    "detected": [
+      {
+        "type": "beating_red_light",
+        "fileUrl": ""
+      }
     ],
     "date": "2016-10-23 12:34 AM",
     "fileUrl": "/assets-src/files/videos/beating_red_light.mp4"

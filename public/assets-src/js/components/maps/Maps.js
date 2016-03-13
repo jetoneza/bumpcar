@@ -22,7 +22,6 @@ class Maps extends React.Component {
     var {mapCanvas} = this.refs;
     GoogleMaps.KEY = 'AIzaSyDr8XyBDTZwhdBKTfAhoEZNN85NsLQxQxU';
     GoogleMaps.LIBRARIES = ['geometry', 'places'];
-    GoogleMaps.SENSOR = false;
     GoogleMaps.load((google) => {
       this.google = google;
       this._initialize(mapCanvas);
@@ -47,7 +46,9 @@ class Maps extends React.Component {
     var map = new google.maps.Map(mapCanvas, {
       center: PSSCC,
       scrollwheel: false,
-      zoom: 7
+      zoom: 7,
+      mapTypeId: google.maps.MapTypeId.HYBRID,
+      labels: true
     });
 
     var directionsDisplay = new google.maps.DirectionsRenderer({
