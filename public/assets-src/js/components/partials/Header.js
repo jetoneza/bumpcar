@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {Link} from 'react-router';
 
 /**
  * Header Component
@@ -13,9 +14,10 @@ class Header extends React.Component {
    * @returns {XML}
    */
   render() {
+    var {title, path} = this.props;
     return (
         <div className="ui inverted vertical left aligned segment main-header">
-          <h1 className="company ui header">Bumpcar</h1>
+          <Link to={path} className="company ui header">{title}</Link>
         </div>
     );
   }
