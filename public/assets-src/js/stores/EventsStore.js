@@ -1,6 +1,7 @@
 var Dispatcher = require('../dispatchers/EventsDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
+var _ = require('underscore');
 var CHANGE_EVENT = 'change';
 var _data = [];
 
@@ -34,6 +35,14 @@ var EventsStore = assign({}, EventEmitter.prototype, {
    */
   getData: function () {
     return _data;
+  },
+
+  getEvent: function (id) {
+    var event = _.find(_data, (event) => {
+      return event.id == id;
+    });
+
+    return event;
   }
 });
 

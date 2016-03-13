@@ -24,7 +24,6 @@ class MainComponent extends React.Component {
   render() {
     return (
         <div className="main-component">
-          <Header title="Bumpcar" path="/simulation"/>
           <div className="ui container header tabs-wrapper">
             <div className="ui pointing secondary menu compact tab-menu" ref="tabMenu">
               <a className="item active" data-tab="feed">Feed</a>

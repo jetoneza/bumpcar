@@ -4,7 +4,9 @@ import React from 'react';
 import Video from '../partials/Video';
 import Maps from '../maps/Maps';
 import ViolationCard from './ViolationCard';
+import Stores from '../../stores';
 import moment from 'moment';
+import {Link} from 'react-router';
 
 /**
  * Event Component
@@ -12,21 +14,31 @@ import moment from 'moment';
  */
 class Event extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    var event = Stores.EventsStore.getEvent(props.params.id);
+
+    this.state = {
+      event
+    }
+  }
+
   /**
    * Returns the component markup
    * @returns {XML}
    */
   render() {
-    var {event} = this.props;
+    var {event} = this.state;
 
     var date = moment(event.date).fromNow();
 
     return (
         <div className="event-component">
-          <button className="ui button back-button" onClick={this.props.handleBackClick}>
+          <Link to="/" className="ui button back-button">
             <i className="arrow circle left icon"></i>
             Back
-          </button>
+          </Link>
           <div className="event-content">
             <Video fileUrl={event.file_url}/>
             <div className="meta">

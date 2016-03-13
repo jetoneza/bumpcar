@@ -4,6 +4,7 @@ import React from 'react';
 import EventsConstants from '../../constants/events';
 import _ from 'underscore';
 import moment from 'moment';
+import {Link} from 'react-router';
 
 /**
  * Feed Component
@@ -55,11 +56,13 @@ class FeedCard extends React.Component {
 
     var date = moment(event.date).fromNow();
 
+    var link = `/event/${event.id}`;
+
     return (
         <div className="item feed-card" ref="item">
           <div className="content">
-            <a className="header"
-               onClick={(e) => this.props.handleCardClick(event)}>{event.place.name}</a>
+            <Link to={link} className="header"
+                  onClick={(e) => this.props.handleCardClick(event)}>{event.place.name}</Link>
             <div className="meta">
               <span className="cinema">{date}</span>
             </div>
@@ -67,11 +70,11 @@ class FeedCard extends React.Component {
               <p>Detected!</p>
             </div>
             <div className="extra">
-              <div className="ui right floated primary button view-button"
-                   onClick={(e) => this.props.handleCardClick(event)}>
+              <Link to={link}
+                    className="ui right floated primary button view-button">
                 View
                 <i className="arrow circle right icon"></i>
-              </div>
+              </Link>
               {event.violations.map((violation) => {
                 var color = this._getColorByKey(violation.type)
                 var type = this._stringifyKey(violation.type)
