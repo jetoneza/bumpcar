@@ -4,6 +4,7 @@ import React from 'react';
 import Video from '../partials/Video';
 import Maps from '../maps/Maps';
 import ViolationCard from './ViolationCard';
+import moment from 'moment';
 
 /**
  * Event Component
@@ -18,6 +19,8 @@ class Event extends React.Component {
   render() {
     var {event} = this.props;
 
+    var date = moment(event.date).fromNow();
+
     return (
         <div className="event-component">
           <button className="ui button back-button" onClick={this.props.handleBackClick}>
@@ -28,7 +31,7 @@ class Event extends React.Component {
             <Video fileUrl={event.fileUrl}/>
             <div className="meta">
               <h1 className="place">{event.place.name}</h1>
-              <div className="time">{event.date}</div>
+              <div className="time">{date}</div>
               <div className="ui cards">
                 {event.detected.map((violation) => {
                   return (

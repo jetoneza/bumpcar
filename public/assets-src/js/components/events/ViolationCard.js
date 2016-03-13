@@ -54,7 +54,7 @@ class ViolationCard extends React.Component {
           <div className="content">
             <a className="header">{type}</a>
             <div className="meta">
-              <span className="date">{date}</span>
+              <span className="date"></span>
             </div>
           </div>
           <div className="extra content">

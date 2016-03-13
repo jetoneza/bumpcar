@@ -3,6 +3,7 @@
 import React from 'react';
 import EventsConstants from '../../constants/events';
 import _ from 'underscore';
+import moment from 'moment';
 
 /**
  * Feed Component
@@ -52,13 +53,15 @@ class FeedCard extends React.Component {
 
     var {event} = this.props;
 
+    var date = moment(event.date).fromNow();
+
     return (
         <div className="item feed-card" ref="item">
           <div className="content">
             <a className="header"
                onClick={(e) => this.props.handleCardClick(event)}>{event.place.name}</a>
             <div className="meta">
-              <span className="cinema">{event.date}</span>
+              <span className="cinema">{date}</span>
             </div>
             <div className="description">
               <p>Detected!</p>
