@@ -49,7 +49,7 @@ class ViolationCard extends React.Component {
     return (
         <div className="ui card">
           <div className="image">
-            <img src={violation.fileUrl}/>
+            <img src={violation.file_url}/>
           </div>
           <div className="content">
             <a className="header">{type}</a>

@@ -28,12 +28,12 @@ class Event extends React.Component {
             Back
           </button>
           <div className="event-content">
-            <Video fileUrl={event.fileUrl}/>
+            <Video fileUrl={event.file_url}/>
             <div className="meta">
               <h1 className="place">{event.place.name}</h1>
               <div className="time">{date}</div>
               <div className="ui cards">
-                {event.detected.map((violation) => {
+                {event.violations.map((violation) => {
                   return (
                       <ViolationCard key={violation.type} violation={violation} date={event.date}/>
                   );

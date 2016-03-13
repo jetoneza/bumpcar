@@ -72,7 +72,7 @@ class FeedCard extends React.Component {
                 View
                 <i className="arrow circle right icon"></i>
               </div>
-              {event.detected.map((violation) => {
+              {event.violations.map((violation) => {
                 var color = this._getColorByKey(violation.type)
                 var type = this._stringifyKey(violation.type)
 

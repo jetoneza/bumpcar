@@ -41,7 +41,7 @@ class Maps extends React.Component {
     var google = this.google;
 
     var PSSCC = {lat: 7.057180, lng: 125.599512};
-    var place = {lat: parseFloat(place.lat), lng: parseFloat(place.long)};
+    var place = {lat: parseFloat(place.latitude), lng: parseFloat(place.longitude)};
 
     var map = new google.maps.Map(mapCanvas, {
       center: PSSCC,

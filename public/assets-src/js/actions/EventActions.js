@@ -2,7 +2,7 @@ var EventsDispatcher = require('../dispatchers/EventsDispatcher');
 
 module.exports = {
   getEvents: function () {
-    var path = `/assets-src/files/data/events.json`;
+    var path = '/events';
     $.get(path, {}).done(function (results) {
       EventsDispatcher.dispatch({
         type: 'GET_EVENTS',
