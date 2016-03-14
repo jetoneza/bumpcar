@@ -48,16 +48,13 @@ class Event extends React.Component {
                   <div className="time">{date}</div>
                 </div>
               </div>
-              <div className="four wide column">
-                <div className="ui cards">
-                  {event.violations.map((violation) => {
-                    return (
-                        <ViolationCard key={violation.type} violation={violation}
-                                       date={event.created_at}/>
-                    );
-                  })}
-                </div>
-              </div>
+            </div>
+            <div className="ui four stackable cards">
+              {event.violations.map((violation) => {
+                return (
+                    <ViolationCard key={violation.id} violation={violation}/>
+                );
+              })}
             </div>
             <Maps place={event.place}/>
           </div>

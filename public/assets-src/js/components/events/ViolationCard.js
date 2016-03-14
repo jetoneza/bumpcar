@@ -57,8 +57,8 @@ class ViolationCard extends React.Component {
     });
 
     return (
-        <div className="ui fluid card violation-card">
-          <div className="image">
+        <div className={`ui ${color} card violation-card`}>
+          <div className="ui centered small image">
             <img src={violation.file_url}/>
           </div>
           <div className="content">
@@ -66,7 +66,7 @@ class ViolationCard extends React.Component {
               {type}
             </div>
             <div className="meta">
-              <h5 className="time">Time: {date}</h5>
+              <h5 className="time">Time: {violation.created_at}</h5>
               <h5 className={speedCx}>Speed: {violation.speed} kph</h5>
             </div>
           </div>

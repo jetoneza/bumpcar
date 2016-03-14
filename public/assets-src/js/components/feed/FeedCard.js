@@ -80,7 +80,7 @@ class FeedCard extends React.Component {
                 var type = this._stringifyKey(violation.type)
 
                 return (
-                    <div key={violation.type} className={`ui label ${color}`}>{type}</div>
+                    <div key={violation.id} className={`ui label ${color}`}>{type}</div>
                 );
               })}
             </div>
