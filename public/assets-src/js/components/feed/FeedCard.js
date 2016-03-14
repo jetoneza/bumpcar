@@ -54,7 +54,7 @@ class FeedCard extends React.Component {
 
     var {event} = this.props;
 
-    var date = moment(event.date).fromNow();
+    var date = moment(event.created_at).fromNow();
 
     var link = `/event/${event.id}`;
 

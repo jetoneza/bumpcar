@@ -41,7 +41,7 @@ class ViolationCard extends React.Component {
    * @returns {XML}
    */
   render() {
-    var {violation, date} = this.props;
+    var {violation} = this.props;
 
     var type = this._stringifyKey(violation.type);
     var color = this._getColorByKey(violation.type);

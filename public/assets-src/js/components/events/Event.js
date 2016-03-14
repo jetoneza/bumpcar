@@ -31,7 +31,7 @@ class Event extends React.Component {
   render() {
     var {event} = this.state;
 
-    var date = moment(event.date).fromNow();
+    var date = moment(event.created_at).fromNow();
 
     return (
         <div className="event-component">
@@ -47,7 +47,7 @@ class Event extends React.Component {
               <div className="ui cards">
                 {event.violations.map((violation) => {
                   return (
-                      <ViolationCard key={violation.type} violation={violation} date={event.date}/>
+                      <ViolationCard key={violation.type} violation={violation}/>
                   );
                 })}
               </div>
