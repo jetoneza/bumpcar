@@ -3,6 +3,7 @@
 import React from 'react';
 import EventsConstants from '../../constants/events';
 import _ from 'underscore';
+import cx from 'classnames';
 
 /**
  * ViolationCard Component
@@ -41,24 +42,33 @@ class ViolationCard extends React.Component {
    * @returns {XML}
    */
   render() {
-    var {violation} = this.props;
+    var {violation, date} = this.props;
 
     var type = this._stringifyKey(violation.type);
     var color = this._getColorByKey(violation.type);
 
+    var labelColor = violation.speed > 30 ? 'red' : 'green';
+
+    var speedCx = cx({
+      ui: true,
+      header: true,
+      speed: true,
+      [labelColor]: true
+    });
+
     return (
-        <div className="ui card">
+        <div className="ui fluid card violation-card">
           <div className="image">
             <img src={violation.file_url}/>
           </div>
           <div className="content">
-            <a className="header">{type}</a>
-            <div className="meta">
-              <span className="date"></span>
+            <div className={`ui ${color} ribbon label`}>
+              {type}
             </div>
-          </div>
-          <div className="extra content">
-            <div className={`ui label ${color}`}>{type}</div>
+            <div className="meta">
+              <h5 className="time">Time: {date}</h5>
+              <h5 className={speedCx}>Speed: {violation.speed} kph</h5>
+            </div>
           </div>
         </div>
     );

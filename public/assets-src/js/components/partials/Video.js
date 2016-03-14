@@ -15,7 +15,7 @@ class Video extends React.Component {
   render() {
     var {fileUrl} = this.props;
     return (
-        <div className="ui container video-wrapper">
+        <div className="video-wrapper">
           <div className="video-container">
             <video id="video" className="video" preload autoPlay muted controls>
               <source src={fileUrl} type="video/mp4"/>

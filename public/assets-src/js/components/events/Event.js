@@ -40,16 +40,23 @@ class Event extends React.Component {
             Back
           </Link>
           <div className="event-content">
-            <Video fileUrl={event.file_url}/>
-            <div className="meta">
-              <h1 className="place">{event.place.name}</h1>
-              <div className="time">{date}</div>
-              <div className="ui cards">
-                {event.violations.map((violation) => {
-                  return (
-                      <ViolationCard key={violation.type} violation={violation}/>
-                  );
-                })}
+            <div className="ui grid">
+              <div className="twelve wide column">
+                <Video fileUrl={event.file_url}/>
+                <div className="ui violet segment meta">
+                  <h1 className="place">{event.place.name}</h1>
+                  <div className="time">{date}</div>
+                </div>
+              </div>
+              <div className="four wide column">
+                <div className="ui cards">
+                  {event.violations.map((violation) => {
+                    return (
+                        <ViolationCard key={violation.type} violation={violation}
+                                       date={event.created_at}/>
+                    );
+                  })}
+                </div>
               </div>
             </div>
             <Maps place={event.place}/>

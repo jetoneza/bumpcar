@@ -80,6 +80,14 @@ class Maps extends React.Component {
     return (
         <div className="map-component">
           <h2>Map</h2>
+          <div className="legend">
+            <div className="point">
+              <a className="ui green circular label">A</a> PSSCC
+            </div>
+            <div className="point">
+              <a className="ui red circular label">B</a> {this.props.place.name}
+            </div>
+          </div>
           <div className="map" ref="mapCanvas"></div>
         </div>
     );

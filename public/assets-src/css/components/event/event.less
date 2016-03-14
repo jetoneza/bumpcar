@@ -1,7 +1,8 @@
 .event-component {
-  margin: 0 10%;
+  margin: 0 5%;
   .back-button {
     position: fixed;
+    z-index: 100;
     top: 13px;
     right: 30px;
     background-color: @db_strip;
@@ -13,14 +14,17 @@
     }
   }
   .event-content {
-    margin: 40px 0;
+    margin: 15px 0;
     .meta {
-      margin: 20px 0;
+      margin-right: 26px;
+    }
+
+    .violation-card {
       .time {
-        margin: 10px 0;
-        font-size: 14px;
-        font-style: italic;
-        color: @db_char;
+        margin-top: 10px
+      }
+      .speed {
+        margin: 0;
       }
     }
   }
