@@ -12,6 +12,7 @@ var users = require('./routes/users');
 var simulation = require('./routes/simulation');
 var test = require('./routes/test');
 var events = require('./routes/events');
+var event = require('./routes/event');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/users', users);
 app.use('/simulation', simulation);
 app.use('/test', test);
 app.use('/events', events);
+app.use('/event', event);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
