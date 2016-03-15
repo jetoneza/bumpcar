@@ -66,6 +66,7 @@ class ViolationCard extends React.Component {
               {type}
             </div>
             <div className="meta">
+              <div className="ui label green">Speed limit: 30 kph</div>
               <h5 className="time">Time: {violation.created_at}</h5>
               <h5 className={speedCx}>Speed: {violation.speed} kph</h5>
             </div>
