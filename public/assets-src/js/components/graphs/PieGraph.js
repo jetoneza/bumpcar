@@ -8,59 +8,51 @@ require('highcharts/modules/exporting')(HighCharts);
  * Graph Component
  * @author jet.oneza <jet.oneza@gmail.com>
  */
-class BarGraph extends React.Component {
+class PieGraph extends React.Component {
 
   componentDidMount() {
     var {count} = this.props.stats;
-    HighCharts.chart(this.refs.barGraph, {
+
+    HighCharts.chart(this.refs.pieChart, {
       chart: {
-        type: 'column',
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
       },
       title: {
-        text: 'Violations Detected'
+        text: 'Percentage of Detected Violations'
       },
-      xAxis: {
-        type: 'category'
-      },
-      yAxis: {
-        title: {
-          text: 'Violation count'
-        }
-
-      },
-      legend: {
-        enabled: false
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
       },
       plotOptions: {
-        series: {
-          borderWidth: 0,
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
           dataLabels: {
             enabled: true,
-            format: '{point.y}'
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+              color: (HighCharts.theme && HighCharts.theme.contrastTextColor) || 'black'
+            }
           }
         }
       },
-
-      tooltip: {
-        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b><br/>'
-      },
-
       series: [{
-        name: 'Violation',
+        name: 'Violations',
         colorByPoint: true,
         data: [{
           name: 'Over Speeding',
           y: count.over_speeding,
-          drilldown: 'Over Speeding'
+          sliced: true,
+          selected: true
         }, {
           name: 'Wrong Lane',
           y: count.wrong_lane,
-          drilldown: 'Wrong Lane'
         }, {
           name: 'Beating the Red Light',
           y: count.beating_red_light,
-          drilldown: 'Beating the Red Light'
         }]
       }]
     });
@@ -72,7 +64,7 @@ class BarGraph extends React.Component {
    */
   render() {
     return (
-        <div className="chart" ref="barGraph"></div>
+        <div className="chart" ref="pieChart"></div>
     );
   }
 }
@@ -81,12 +73,12 @@ class BarGraph extends React.Component {
  * Declare property types here
  * @type {Object}
  */
-BarGraph.propTypes = {};
+PieGraph.propTypes = {};
 
 /**
  * Declare default property values here
  * @type {Object}
  */
-BarGraph.defaultProps = {};
+PieGraph.defaultProps = {};
 
-export default BarGraph;
+export default PieGraph;
