@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import BarGraph from './BarGraph';
 
 /**
  * Graph Component
@@ -14,8 +15,9 @@ class Graphs extends React.Component {
    */
   render() {
     return (
-        <div className="graphs-component">
+        <div className="ui center aligned container graphs-component">
           <h1>Graphs</h1>
+          <BarGraph />
         </div>
     );
   }

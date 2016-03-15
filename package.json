@@ -44,7 +44,8 @@
     "grunt-contrib-clean": "0.6.0",
     "gulp-autoprefixer": "2.3.1",
     "gulp": "^3.9.1",
-    "object-assign": "^1.0.0"
+    "object-assign": "^1.0.0",
+    "highcharts": "4.2.3"
   },
   "devDependencies": {
     "webpack-dev-middleware": "^1.5.1",
