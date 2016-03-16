@@ -9,10 +9,24 @@ require('highcharts/modules/exporting')(HighCharts);
  * @author jet.oneza <jet.oneza@gmail.com>
  */
 class BarGraph extends React.Component {
+  constructor(props) {
+    super(props);
+    this.chart = null;
+  }
+
+  componentWillReceiveProps(newProps, oldProps) {
+    this.props = newProps;
+    this._updateChartData();
+  }
 
   componentDidMount() {
+    this._initChart();
+  }
+
+  _initChart() {
     var {count} = this.props.stats;
-    HighCharts.chart(this.refs.barGraph, {
+
+    this.chart = HighCharts.chart(this.refs.barGraph, {
       chart: {
         type: 'column',
       },
@@ -64,6 +78,28 @@ class BarGraph extends React.Component {
         }]
       }]
     });
+  }
+
+  _updateChartData() {
+    var {count} = this.props.stats;
+
+    var data = [
+      {
+        name: 'Over Speeding',
+        y: count.over_speeding,
+        drilldown: 'Over Speeding'
+      }, {
+        name: 'Wrong Lane',
+        y: count.wrong_lane,
+        drilldown: 'Wrong Lane'
+      }, {
+        name: 'Beating the Red Light',
+        y: count.beating_red_light,
+        drilldown: 'Beating the Red Light'
+      }
+    ];
+
+    this.chart.series[0].setData(data);
   }
 
   /**

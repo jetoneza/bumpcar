@@ -16,6 +16,10 @@ class Graphs extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.startDate = moment();
+    this.endDate = moment().add(7, 'days');
+
     this.state = {
       count: null,
       startDate: moment(),
@@ -41,6 +45,7 @@ class Graphs extends React.Component {
 
   _getGraphs() {
     var {count} = this.state;
+
     return (
         <div className="graphs">
           <PieGraph stats={count}/>
@@ -50,11 +55,37 @@ class Graphs extends React.Component {
   }
 
   _handleStartDateChange(startDate) {
+
+    if (startDate > this.state.endDate) {
+      window.alert('Start date must be less than the end date!');
+      return;
+    }
+
+    this.startDate = startDate;
+
     this.setState({startDate})
+    this._request();
   }
 
   _handleEndDateChange(endDate) {
+    if (endDate < this.state.startDate) {
+      window.alert('End date must not be less than the start date!');
+      return;
+    }
+
+    this.endDate = endDate;
+
     this.setState({endDate});
+    this._request();
+  }
+
+  _request() {
+    var data = {
+      startDate: this.startDate.format('YYYY-MM-DD'),
+      endDate: this.endDate.format('YYYY-MM-DD')
+    };
+
+    ViolationActions.getCount(data);
   }
 
   /**
