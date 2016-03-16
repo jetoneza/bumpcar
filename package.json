@@ -45,7 +45,8 @@
     "gulp-autoprefixer": "2.3.1",
     "gulp": "^3.9.1",
     "object-assign": "^1.0.0",
-    "highcharts": "4.2.3"
+    "highcharts": "4.2.3",
+    "react-datepicker": "0.23.2"
   },
   "devDependencies": {
     "webpack-dev-middleware": "^1.5.1",
